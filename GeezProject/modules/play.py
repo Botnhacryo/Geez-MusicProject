@@ -130,7 +130,7 @@ async def playlist(client, message):
         return    
     queue = que.get(message.chat.id)
     if not queue:
-        await message.reply_text("**Sedang tidak Memutar lagu**")
+        await message.reply_text("**Không phát một bài hát**")
     temp = []
     for t in queue:
         temp.append(t)
@@ -161,9 +161,9 @@ def updated_stats(chat, queue, vol=100):
         if len(que) > 0:
             stats += "\n\n"
             stats += "Volume : {}%\n".format(vol)
-            stats += "Lagu dalam antrian : `{}`\n".format(len(que))
-            stats += "Sedang memutar lagu : **{}**\n".format(queue[0][0])
-            stats += "Requested by : {}".format(queue[0][1].mention)
+            stats += "Bài hát trong hàng đợi : `{}`\n".format(len(que))
+            stats += "Đang phát một bài hát : **{}**\n".format(queue[0][0])
+            stats += "Được yêu cầu bởi : {}".format(queue[0][1].mention)
     else:
         stats = None
     return stats
@@ -200,14 +200,14 @@ async def ee(client, message):
     if stats:
         await message.reply(stats)
     else:
-        await message.reply("**Silahkan Nyalakan dulu VCG nya!**")
+        await message.reply("**Vui lòng bật VCG trước!**")
 
 
 @Client.on_message(filters.command("player") & filters.group & ~filters.edited)
 @authorized_users_only
 async def settings(client, message):
     if message.chat.id in DISABLED_GROUPS:
-        await message.reply("**Music Player dimatikan**")
+        await message.reply("**Trình phát nhạc bị tắt**")
         return    
     playing = None
     chat_id = get_chat_id(message.chat)
@@ -222,7 +222,7 @@ async def settings(client, message):
         else:
             await message.reply(stats, reply_markup=r_ply("play"))
     else:
-        await message.reply("**Silahkan Nyalakan dulu VCG nya!**")
+        await message.reply("**Vui lòng bật VCG trước!**")
 
 
 @Client.on_message(
@@ -245,7 +245,7 @@ async def hfmm(_, message):
     if status == "ON" or status == "on" or status == "On":
         lel = await message.reply("`Processing...`")
         if not message.chat.id in DISABLED_GROUPS:
-            await lel.edit("**Pemutar Musik Sudah Diaktifkan Di Obrolan Ini**")
+            await lel.edit("**Trình phát nhạc được kích hoạt trong cuộc trò chuyện này**")
             return
         DISABLED_GROUPS.remove(message.chat.id)
         await lel.edit(
@@ -534,8 +534,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("📌 Groups", url="https://t.me/GeezSupportGroup"),
-                    InlineKeyboardButton("⛑ Channel", url="https://t.me/GeezProjets"),
+                    InlineKeyboardButton("📌 Groups", url="https://t.me/nangcuc"),
+                    InlineKeyboardButton("⛑ Owner", url="https://t.me/ryostar"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
@@ -555,7 +555,7 @@ async def play(_, message: Message):
         )
     elif urls:
         query = toxt
-        await lel.edit("🎵 **Sedang Memproses Lagu**")
+        await lel.edit("🎵 **Đang xử lý bài hát**")
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -581,8 +581,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("📌 Groups", url="https://t.me/GeezSupportGroup"),
-                    InlineKeyboardButton("⛑ Channel", url="https://t.me/GeezProjects"),
+                    InlineKeyboardButton("📌 Groups", url="https://t.me/nangcuc"),
+                    InlineKeyboardButton("⛑ Owner", url="https://t.me/ryostar"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
@@ -612,7 +612,7 @@ async def play(_, message: Message):
             while j < 5:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:25]}](https://youtube.com{results[j]['url_suffix']})\n"
                 toxxt += f" ├ 💡 **Duration** - {results[j]['duration']}\n"
-                toxxt += f" └ ⚡ __Powered by Ryo Music\n\n"
+                toxxt += f" └ ⚡ __Được cung cấp bởi Ryo Music\n\n"
 
                 j += 1            
             koyboard = InlineKeyboardMarkup(
