@@ -28,17 +28,17 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>Haii {message.from_user.first_name} saya adalah {PROJECT_NAME}\n
-Saya Adalah Bot Music Group, Yang dapat Memutar Lagu di Voice Chat Group Anda Dengan Mudah
-Saya Memiliki Banyak Fitur Seperti :
-• Memutar Musik.
-• Mendownload Lagu.
-• Mencari Lagu Yang ingin di Putar atau di Download.
-• Gunakan Perintah » /help « untuk Mengetahui Fitur Lengkapnya
+        f"""<b>Chào {message.from_user.first_name} tôi là {PROJECT_NAME}\n
+Tôi là một Bot nhóm nhạc, có thể phát các bài hát trong cuộc trò chuyện thoại trong nhóm của bạn một cách dễ dàng
+Tôi có nhiều tính năng như:
+• Chơi nhạc.
+• Tải xuống bài hát.
+• Tìm kiếm bài hát bạn muốn phát hoặc tải xuống.
+• Sử dụng lệnh » /help « để tìm hiểu các tính năng đầy đủ
 
-📌 Special Thanks To : {OWNER}
+📌 Trân trọng cảm ơn : {OWNER}
 
-Ingin Menambahkan Saya ke Grup Anda? Tambahkan Saya Ke Group Anda!
+Muốn thêm tôi vào nhóm của bạn? Thêm tôi vào nhóm của bạn!
 </b>""",
 
 # Edit Yang Seharusnya Lu Edit Aja:D
@@ -48,7 +48,7 @@ Ingin Menambahkan Saya ke Grup Anda? Tambahkan Saya Ke Group Anda!
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Tambahkan saya ke Grup Anda ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+                        "➕ Thêm tôi vào nhóm của bạn ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
                 [
                     InlineKeyboardButton(
                         "💬 Channel Updates", url=f"https://t.me/{UPDATES_CHANNEL}"), 
@@ -92,7 +92,7 @@ def map(pos):
     elif(pos==len(tr.HELP_MSG)-1):
         url = f"https://t.me/{SUPPORT_GROUP}"
         button = [
-            [InlineKeyboardButton("➕ Tambahkan saya ke Grup Anda ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+            [InlineKeyboardButton("➕ Thêm tôi vào Nhóm của bạn ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
             [InlineKeyboardButton(text = '💬 Channel Updates', url=f"https://t.me/{UPDATES_CHANNEL}"),
              InlineKeyboardButton(text = '🔰 Group Support', url=f"https://t.me/{SUPPORT_GROUP}")],
             [InlineKeyboardButton(text = '«', callback_data = f"help+{pos-1}")]
@@ -114,15 +114,15 @@ def map(pos):
 )
 async def start(client: Client, message: Message):
     await message.reply_text(
-        "💁🏻‍♂️ **Apakah Anda ingin mencari Link YouTube?**",
+        "💁🏻‍♂️ **Bạn có muốn tìm Liên kết YouTube?**",
         reply_markup=InlineKeyboardMarkup(
             [   
                 [    
                     InlineKeyboardButton(
-                        "✅ Ya", switch_inline_query_current_chat=""
+                        "✅ Có", switch_inline_query_current_chat=""
                     ),
                     InlineKeyboardButton(
-                        "❌ Tidak ", callback_data="close"
+                        "❌ Không ", callback_data="close"
                     )
                 ]
             ]
@@ -137,12 +137,12 @@ async def start(client: Client, message: Message):
 )
 async def help(client: Client, message: Message):
     await message.reply_text(
-        """**Klik Tombol dibawah untuk Melihat Cara Menggunakan Bot**""",
+        """**Nhấp vào nút phía dưới để được hướng dẫn tạo**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "📜 Cara Menggunakan BOT 📜", url="https://t.me/nangcuc"
+                        "📜 Cách tạo BOT 📜", url="https://t.me/ryostar"
                     )
                 ]
             ]
@@ -156,7 +156,7 @@ async def help(client: Client, message: Message):
     & ~ filters.edited
 )
 async def reload(client: Client, message: Message):
-    await message.reply_text("""✅ Bot **berhasil dimulai ulang!**\n\n• **Daftar admin** telah **diperbarui**""",
+    await message.reply_text("""✅ Bot **đã khởi động lại thành công!**\n\n• **Danh sách quản trị viên** đã được **cập nhật**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
