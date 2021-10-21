@@ -20,47 +20,47 @@ class Messages():
       HELP_MSG = [
         ".",
 f"""
-**Hey 👋 Selamat datang kembali di {PROJECT_NAME}
+**Chào mừng bạn quay trở lại {PROJECT_NAME}
 
-✣️ {PROJECT_NAME} dapat Memutar Lagu di Voice Chat Group Dengan cara yang Mudah.
+✣️ {PROJECT_NAME} có thể Phát các bài hát trong Trò chuyện bằng giọng nói Nhóm một cách dễ dàng.
 
-✣️ Assistant Music » @{ASSISTANT_NAME}\n\nKlik Next untuk instruksi**
+✣️ Trợ lý âm nhạc » @{ASSISTANT_NAME}\n\nNhấp vào Tiếp theo để xem hướng dẫn**
 
 """,
 
 f"""
-**Pengaturan**
+**Sắp xếp**
 
-1. Jadikan bot sebagai admin
-2. Mulai obrolan suara / VCG
-3. Ketik `/userbotjoin` dan coba /play <nama lagu>
-× Jika Assistant Bot bergabung selamat menikmati musik, 
-× Jika Assistant Bot tidak bergabung Silahkan Tambahkan @{ASSISTANT_NAME} ke grup Anda dan coba lagi
+1. Đặt bot làm quản trị viên
+2. Bắt đầu trò chuyện thoại / VCG
+3. Gõ `/userbotjoin` và thử /play <tên bài hát>
+× Nếu Assistant Bot tham gia thưởng thức âm nhạc,
+× Nếu Trợ lý Bot không tham gia Vui lòng thêm @{ASSISTANT_NAME} vào nhóm của bạn và thử lại
 
 
-**» Perintah Untuk dalam grup Member Juga Bisa :**
+**» Đặt hàng cho các thành viên trong nhóm cũng có thể :**
 
- × /playlist : Untuk Menampilkan daftar putar Lagu sekarang
- × /current : Untuk Menunjukkan  Lagu sekarang yang sedang diputar
- × /song <judul lagu> : Untuk Mendownload lagu di YouTube 
- × /video <judul lagu> : Untuk Mendownload Video di YouTube dengan detail
- × /vsong <judul lagu> : Untuk Mendownload Video di YouTube dengan detail
- × /deezer <judul lagu> : Untuk Mendownload lagu dari deezer 
- × /saavn <judul lagu> : Untuk Mendownload lagu dari website saavn
- × /search <judul lagu> : Untuk Mencari Video di YouTube dengan detail
+ × /playlist : Để hiển thị danh sách Bài hát hiện tại
+ × /current : Hiển thị bài hát hiện tại đang phát
+ × /song <tên bài hát> : Để tải xuống các bài hát trên YouTube
+ × /video <tên bài hát> : Để tải xuống video trên YouTube với thông tin chi tiết
+ × /vsong <tên bài hát> : Để tải xuống video trên YouTube với thông tin chi tiết
+ × /deezer <tên bài hát> : Để tải xuống các bài hát từ deezer
+ × /saavn <tên bài hát> : Để tải xuống các bài hát từ trang web saavn
+ × /search <tên bài hát> : Để tìm kiếm video trên YouTube với thông tin chi tiết
 
-**» Perintah Hanya Untuk Admin :**
+**» Lệnh Chỉ dành cho Quản trị viên :**
 
-× /play <judul lagu> : Untuk Memutar lagu yang Anda minta melalui youtube
-× /play <link yt> : Untuk Memutar lagu yang Anda minta melalui link youtube
-× /play <reply ke audio> : Untuk Memutar lagu yang Anda minta melalui file audio
-× /dplay : Untuk Memutar lagu yang Anda minta melalui deezer
-× /splay : Untuk Memutar lagu yang Anda minta melalui jio saavn
-× /skip : Untuk Menskip pemutaran lagu ke Lagu berikutnya
-× /pause : Untuk Menjeda pemutaran Lagu
-× /resume : Untuk Melanjutkan pemutaran Lagu yang di pause
-× /end : Untuk Memberhentikan pemutaran Lagu
-× /userbotjoin - Untuk Mengundang asisten ke obrolan Anda
-× /admincache - Untuk MemRefresh admin list
+× /play <tên bài hát> : Để phát bài hát bạn yêu cầu qua youtube
+× /play <link yt> : Để phát bài hát bạn yêu cầu qua liên kết youtube
+× /play <trả lời âm thanh> : Để phát bài hát bạn yêu cầu qua tệp âm thanh
+× /dplay : Để phát bài hát bạn yêu cầu qua deezer
+× /splay : Để phát bài hát bạn yêu cầu qua jio saavn
+× /skip : Để Bỏ qua việc phát lại bài hát sang Bài hát tiếp theo
+× /pause : Để tạm dừng phát lại bài hát
+× /resume : Để tiếp tục phát lại bài hát bị tạm dừng
+× /end : Để dừng phát lại bài hát
+× /userbotjoin - Để mời trợ lý vào cuộc trò chuyện của bạn
+× /admincache - Để làm mới danh sách quản trị viên
 """
       ]
