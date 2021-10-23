@@ -687,8 +687,7 @@ async def play(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Đang chơi\n" \
-                    + f"🎧 **Yêu cầu từ:** {message.from_user.mention}",
+            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Đang chơi",
                    reply_markup=keyboard)
 
     os.remove("final.png")
@@ -805,8 +804,7 @@ async def ytplay(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** xếp hàng `{position}`\n" \
-                    + f"🎧 **Yêu cầu từ:** {message.from_user.mention}",
+            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** xếp hàng `{position}`",
                    reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -827,8 +825,7 @@ async def ytplay(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Đang chơi\n" \
-                    + f"🎧 **Yêu cầu từ:** {message.from_user.mention}",
+            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Đang chơi\",
                    reply_markup=keyboard,)
         os.remove("final.png")
         return await lel.delete()
@@ -1037,7 +1034,7 @@ async def lol_cb(b, cb):
         await cb.message.delete()
         await b.send_photo(chat_id,
             photo="final.png",
-            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Xếp hàng `{position}`\n",
+            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Xếp hàng `{position}`",
                    reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -1058,9 +1055,12 @@ async def lol_cb(b, cb):
         await cb.message.delete()
         await b.send_photo(chat_id,
             photo="final.png",
-            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Đang chơi\n",
+            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Đang chơi",
                     reply_markup=keyboard,
         )
         os.remove("final.png")
 
 # Have u read all. If read RESPECT :-)
+@Client.on_callback_query(filters.regex("clse"))
+async def close(client: Client, query: CallbackQuery):
+    await query.message.delete()
