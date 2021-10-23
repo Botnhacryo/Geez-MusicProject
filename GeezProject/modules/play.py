@@ -1037,8 +1037,7 @@ async def lol_cb(b, cb):
         await cb.message.delete()
         await b.send_photo(chat_id,
             photo="final.png",
-            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Xếp hàng `{position}`\n" \
-                    + f"🎧 **Yêu cầu bởi** {r_by.mention}",
+            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Xếp hàng `{position}`\n",
                    reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -1059,8 +1058,7 @@ async def lol_cb(b, cb):
         await cb.message.delete()
         await b.send_photo(chat_id,
             photo="final.png",
-            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Đang chơi\n" \
-                    + f"🎧 **Yêu cầu từ:** {r_by.mention}",
+            caption = f"🏷 **Tiêu đề:** [{title[:30]}]({url})\n⏱ **Thời lượng:** {duration}\n💡 **Status:** Đang chơi\n",
                     reply_markup=keyboard,
         )
         os.remove("final.png")
